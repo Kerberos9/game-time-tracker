@@ -1,8 +1,5 @@
 .app {
-    text-align: center;
     display: flex;
-}
-
-.login-section {
-    order: 2;
+    flex-flow: row wrap;
+    justify-content: center;
 }

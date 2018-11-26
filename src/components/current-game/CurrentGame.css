@@ -1,0 +1,32 @@
+.current-game {
+    background-color: #D8D8D8;
+    width: 80vw;
+    height: 20vh;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.current-game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+}
+
+.title {
+    font-weight: bold;
+    font-size: 26px;
+}
+.total-time{
+    font-size: 20px;
+}
+
+.button{
+    background-color: #4A90E2;
+    border: 1px solid;
+    margin: 0.5rem 0.3rem;
+    width: 15vw;
+    height: 4vh;
+    border-radius: 0.2rem;
+}

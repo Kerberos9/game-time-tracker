@@ -10,7 +10,6 @@ class Header extends Component {
                     <div>Welcome, stranger.</div>
                     <LoginSection />
                 </div>
-
             </>
         );
     }

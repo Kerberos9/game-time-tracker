@@ -1,0 +1,10 @@
+.game-sorter {
+    margin: 0 2rem;
+}
+.text-button {
+    color: #3964a5;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+}

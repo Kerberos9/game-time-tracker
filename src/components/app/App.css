@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .app {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    padding-top: 16rem;
+}
+
+.game-filter {
+    margin: 0.5rem 2rem;
+}
+
+.game-filter-input {
+    min-width: 100%;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
 }

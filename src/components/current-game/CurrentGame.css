@@ -1,9 +1,15 @@
 .current-game {
-    background-color: #D8D8D8;
-    width: 80vw;
-    height: 20vh;
+    background-color: #d8d8d8;
     text-align: center;
-    margin: 1rem 0;
+    margin: 1.5rem 2rem;
+    padding: 0.6rem 0;
+}
+.current-game-block {
+    min-width: 100%;
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    background-color: white;
 }
 
 .current-game-header {
@@ -11,22 +17,32 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.5rem 1rem;
-
 }
 
 .title {
     font-weight: bold;
-    font-size: 26px;
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: auto;
 }
-.total-time{
-    font-size: 20px;
+.total-time {
+    font-size: 0.9rem;
 }
 
-.button{
-    background-color: #4A90E2;
-    border: 1px solid;
+.button {
+    background-color: #4a90e2;
     margin: 0.5rem 0.3rem;
-    width: 15vw;
+    width: 18vw;
     height: 4vh;
-    border-radius: 0.2rem;
+    border-radius: 0.1rem;
+    color: black;
+    border: 1px solid black;
+    font-size: 0.8rem;
+}
+
+.running-time {
+    font-size: 2rem;
+    font-weight: bold;
 }

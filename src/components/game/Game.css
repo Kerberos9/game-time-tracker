@@ -1,0 +1,31 @@
+.game {
+    display: flex;
+    margin: 0.5rem 0;
+}
+
+.game-meta {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.game-title {
+    margin-top: 0.3rem;
+    font-size: 1rem;
+    flex-grow: 1;
+}
+.game-status {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.game-picture {
+    max-width: 6.5rem;
+    padding: 0;
+    display: block;
+    margin-right: 0.5rem;
+}
+
+.button-start {
+    margin-bottom: 0;
+}

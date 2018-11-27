@@ -6,4 +6,4 @@ class LoginSection extends Component {
     }
 }
 
-export {LoginSection};
+export { LoginSection };

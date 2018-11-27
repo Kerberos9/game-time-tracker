@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import './Game.css';
-import { HowLongToBeatService, HowLongToBeatEntry } from 'howlongtobeat';
 class Game extends Component {
-    componentDidMount(){
-        let hltbService = new HowLongToBeatService();
-        hltbService.search('Nioh').then(result => console.log(result)).catch(e => console.error(e));
-    }
     render() {
         return (
             <div className="game">

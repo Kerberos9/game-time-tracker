@@ -15,7 +15,15 @@
     position: relative;
 }
 
-.results-limit-warning{
+.results-limit-warning {
     z-index: 3;
     color: #d8d8d8;
+}
+
+.progress-bar {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 0.5rem;
+    z-index: 3;
 }

@@ -13,7 +13,7 @@ class GameAdder extends Component {
             errorString: '',
             addingGame: false,
         };
-        this.lookUpGames = _.debounce(this.fetchGames, 1000);
+        this.lookUpGames = _.debounce(this.fetchGames, 500);
     }
     fetchGames() {
         this.setState({ loading: true });
@@ -50,7 +50,7 @@ class GameAdder extends Component {
     }
 
     render() {
-        return (
+        return (<>
             <div className="game-adder">
                 <div className="game-adder-input">
                     {this.props.results.length && this.props.isAddingGame ? (
@@ -78,7 +78,10 @@ class GameAdder extends Component {
                         +
                     </button>
                 </div>
+
             </div>
+            {this.state.loading ? <progress className="progress-bar"/> : null}
+            </>
         );
     }
 }

@@ -1,4 +1,4 @@
-const { db, root } = require('./config');
+const { db, root, frontend_origin } = require('../config');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -7,7 +7,7 @@ const hltb = require('./src/hltb/hltb');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: frontend_origin,
 };
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

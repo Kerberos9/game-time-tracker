@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { GameResults } from '../game-results/GameResults';
 import './GameAdder.css';
+import {backend_api} from '../../../config';
 class GameAdder extends Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ class GameAdder extends Component {
     }
     fetchGames() {
         this.setState({ loading: true });
-        let url = `http://localhost:3002/api/getGamesResult?name=${
+        let url = `${backend_api}/getGamesResult?name=${
             this.state.searchValue
         }`;
         fetch(url)

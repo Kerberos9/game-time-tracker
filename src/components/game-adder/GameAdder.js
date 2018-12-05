@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { GameResults } from '../game-results/GameResults';
 import './GameAdder.css';
-import {backend_api} from '../../../config';
+import { backend_api } from '../../config';
 class GameAdder extends Component {
     constructor(props) {
         super(props);
@@ -67,7 +67,6 @@ class GameAdder extends Component {
                                     if (input) input.focus();
                                 }}
                             />
-
                         </>
                     ) : null}
                 </div>

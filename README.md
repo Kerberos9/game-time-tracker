@@ -1,1 +1,1 @@
-Track your play time in PS4 games (manually).
+Track your play time in any game.

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import { GameResults } from '../game-results/GameResults';
+import { GameResults } from '..';
 import './GameAdder.css';
 import { backend_api } from '../../config';
 class GameAdder extends Component {
@@ -50,37 +50,48 @@ class GameAdder extends Component {
     }
 
     render() {
-        return (<>
-            <div className="game-adder">
-                <div className="game-adder-input">
-                    {this.props.results.length && this.props.isAddingGame ? (
-                        <GameResults results={this.props.results} />
-                    ) : null}
-                    {this.props.isAddingGame ? (
-                        <>
-                            <input
-                                type="text"
-                                className="game-filter-input"
-                                placeholder="Add a game"
-                                onKeyUp={this.handleInputMethod.bind(this)}
-                                ref={input => {
-                                    if (input) input.focus();
-                                }}
+        return (
+            <>
+                <div
+                    className="game-adder"
+                    style={
+                        this.props.isAddingGame ? {} : { pointerEvents: 'none' }
+                    }
+                >
+                    <div className="game-adder-input">
+                        {this.props.results.length &&
+                        this.props.isAddingGame ? (
+                            <GameResults
+                                results={this.props.results}
+                                onAddGame={this.props.onAddGame}
                             />
-                        </>
-                    ) : null}
+                        ) : null}
+                        {this.props.isAddingGame ? (
+                            <>
+                                <input
+                                    type="text"
+                                    className="game-filter-input"
+                                    placeholder="Add a game"
+                                    onKeyUp={this.handleInputMethod.bind(this)}
+                                    ref={input => {
+                                        if (input) input.focus();
+                                    }}
+                                />
+                            </>
+                        ) : null}
+                    </div>
+                    <div style={{ pointerEvents: 'auto' }}>
+                        <button
+                            className="add-game"
+                            onClick={this.props.toggleAddingGame}
+                        >
+                            +
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button
-                        className="add-game"
-                        onClick={this.props.toggleAddingGame}
-                    >
-                        +
-                    </button>
-                </div>
-
-            </div>
-            {this.state.loading ? <progress className="progress-bar"/> : null}
+                {this.state.loading ? (
+                    <progress className="progress-bar" />
+                ) : null}
             </>
         );
     }

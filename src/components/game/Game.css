@@ -1,6 +1,7 @@
 .game {
     display: flex;
     margin: 0.5rem 0;
+    height: 5rem;
 }
 
 .game-meta {
@@ -10,6 +11,7 @@
 }
 .game-title {
     margin-top: 0.3rem;
+    padding-left: 0.3rem;
     font-size: 1rem;
     flex-grow: 1;
 }
@@ -20,12 +22,33 @@
 }
 
 .game-picture {
-    max-width: 6.5rem;
+    width: 6.5rem;
     padding: 0;
     display: block;
     margin-right: 0.5rem;
+    object-fit: cover;
+    height: 100%;
 }
 
 .button-start {
     margin-bottom: 0;
+}
+
+.delete-game{
+    color: white;
+    background-color: darkred;
+    border-radius: 0.1rem;
+    border: 1px solid black;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    font-size: 0.8rem;
+}
+
+.game-info{
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    justify-content: space-between;
 }

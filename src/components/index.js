@@ -6,3 +6,4 @@ export { GameSorter } from './game-sorter/GameSorter';
 export { GameList } from './game-list/GameList';
 export { Game } from './game/Game';
 export { GameAdder } from './game-adder/GameAdder';
+export { GameResults } from './game-results/GameResults';

@@ -6,31 +6,17 @@ class GameList extends Component {
     render() {
         return (
             <div className="game-list">
-                <Game
-                    title={'Detroit: Become Human'}
-                    played={'10h 23m'}
-                    onGameStart={this.props.onGameStart}
-                />
-                <Game
-                    title={'Nioh: Complete Edition'}
-                    played={'10h 23m'}
-                    onGameStart={this.props.onGameStart}
-                />
-                <Game
-                    title={'Binding of Isaac: Afterbirth+'}
-                    played={'10h 23m'}
-                    onGameStart={this.props.onGameStart}
-                />
-                <Game
-                    title={'Life is Strange: Before the Storm'}
-                    played={'10h 23m'}
-                    onGameStart={this.props.onGameStart}
-                />
-                <Game
-                    title={'God of War'}
-                    played={'10h 23m'}
-                    onGameStart={this.props.onGameStart}
-                />
+                {this.props.games.map(game => (
+                    <Game
+                        key={game.id}
+                        id={game.id}
+                        title={game.name}
+                        played={game.played}
+                        image={game.image}
+                        onGameStart={this.props.onGameStart}
+                        onGameDelete={this.props.onGameDelete}
+                    />
+                ))}
             </div>
         );
     }

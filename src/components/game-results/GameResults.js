@@ -5,7 +5,7 @@ class GameResults extends Component {
     render() {
         let results =
             this.props.results.map(r => (
-                <GameResult imageUrl={r.imageUrl} name={r.name} key={r.id} />
+                <GameResult onAddGame={this.props.onAddGame} imageUrl={r.imageUrl} name={r.name} key={r.id} id={r.id} />
             )).reverse() || [];
         return (
             <>

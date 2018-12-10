@@ -1,8 +1,13 @@
 .current-game {
-    background-color: #d8d8d8;
     text-align: center;
     margin: 1.5rem 2rem;
     padding: 0.6rem 0;
+    background: #d8d8d8 no-repeat;
+    height: 9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 .current-game-block {
     min-width: 100%;

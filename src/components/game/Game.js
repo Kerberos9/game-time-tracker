@@ -2,9 +2,31 @@ import React, { Component } from 'react';
 import './Game.css';
 import { fromS } from 'hh-mm-ss';
 class Game extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            deleteActive: false,
+        };
+    }
+    toggleDelete() {
+        this.setState({ deleteActive: !this.state.deleteActive });
+    }
+
+    deleteGame() {
+        this.props.onGameDelete(this.props.id);
+    }
     render() {
         return (
             <div className="game">
+                {this.state.deleteActive ? <div className="game-overlay">
+                    <span>{`Are you sure you want to delete ${
+                        this.props.title
+                    }?`}</span>
+                    <div className="delete-buttons">
+                        <button className="button delete-button"  onClick={this.deleteGame.bind(this)}>Yes</button>
+                        <button className="button"  onClick={this.toggleDelete.bind(this)}>No</button>
+                    </div>
+                </div> : null}
                 <div>
                     <img
                         src={this.props.image || 'https://picsum.photos/104/82'}
@@ -31,12 +53,9 @@ class Game extends Component {
                         <div className="game-info">
                             <span
                                 className="delete-game"
-                                style={{ cursor: 'pointer' }}
-                                onClick={() =>
-                                    this.props.onGameDelete(this.props.id)
-                                }
+                                onClick={this.toggleDelete.bind(this)}
                             >
-                                Delete
+                                X
                             </span>
                             <div className="game-time">
                                 {this.props.played > 0

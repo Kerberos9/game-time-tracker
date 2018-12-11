@@ -7,7 +7,7 @@ Track your playtime in any game, any console. This was mostly made for PS4 since
 - Time is only saved when you press the 'Finish' button, this is made so you can discard recorded time (with the 'Cancel' button) if you went afk, or if you were only testing.
 
 ### Planned features
-- Sort games in your list.
+- ~~Sort games in your list~~
 - Add a way to import/export data easily from localStorage.
 - Account system to sync times cross-browser.
 - Showing average times for Main Game and Completionist, both fetched from [HowLongToBeat](https://howlongtobeat.com).

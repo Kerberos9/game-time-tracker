@@ -11,6 +11,8 @@ class App extends Component {
             results: [],
             games: JSON.parse(localStorage.getItem('games')) || [],
             currentGame: [],
+            sortType: localStorage.getItem('sortType') || 'recent',
+            sortDirection: localStorage.getItem('sortDirection') || 'desc',
         };
     }
     onGameStart(game) {
@@ -25,32 +27,65 @@ class App extends Component {
     }
     onAddGame(game) {
         let games = this.state.games;
-        games.push({ ...game, played: 0 });
-        this.setState({ games }, this.saveToStorage);
+        games.push({ ...game, played: 0, lastPlayed: 0 });
+        this.setState({ games }, this.prepareGameList);
         this.toggleAddingGame();
     }
+
     updatePlayedGame(data) {
         let otherGames = this.state.games.filter(g => g.id !== data.game.id);
         let game = data.game;
         game.played = data.played;
+        game.lastPlayed = Date.now();
         let games = [...otherGames, game];
-        games.unshift(games.pop());
-        this.setState({ games, currentGame: [] }, this.saveToStorage);
+        this.setState({ games, currentGame: [] }, this.prepareGameList);
     }
 
     saveToStorage() {
         localStorage.setItem('games', JSON.stringify(this.state.games));
+        localStorage.setItem('sortDirection', this.state.sortDirection);
+        localStorage.setItem('sortType', this.state.sortType);
     }
 
     onGameDelete(id) {
         let otherGames = this.state.games.filter(g => g.id !== id);
-        this.setState({ games: otherGames }, this.saveToStorage);
+        this.setState({ games: otherGames }, this.prepareGameList);
     }
 
     onCancelTracking() {
         this.setState({ currentGame: [] });
     }
 
+    onSortDirectionChange() {
+        this.state.sortDirection === 'asc'
+            ? this.setState({ sortDirection: 'desc' }, this.prepareGameList)
+            : this.setState({ sortDirection: 'asc' }, this.prepareGameList);
+    }
+    onSortTypeChange(sortType) {
+        this.setState({ sortType }, this.prepareGameList);
+    }
+    prepareGameList() {
+        let games = this.state.games.sort(this.getSortingFunction());
+        this.setState({ games }, this.saveToStorage);
+    }
+
+    getSortingFunction() {
+        switch (this.state.sortType) {
+            case 'time':
+                return this.state.sortDirection === 'asc'
+                    ? (a, b) => a.played - b.played
+                    : (a, b) => b.played - a.played;
+            case 'title':
+                return this.state.sortDirection === 'asc'
+                    ? (a, b) => (a.name > b.name ? 1 : -1)
+                    : (a, b) => (b.name > a.name ? 1 : -1);
+            case 'recent':
+            default:
+                return this.state.sortDirection === 'asc'
+                    ? (a, b) => a.lastPlayed - b.lastPlayed
+                    : (a, b) => b.lastPlayed - a.lastPlayed;
+        }
+    }
     render() {
         return (
             <div className="app">
@@ -67,7 +102,14 @@ class App extends Component {
                         placeholder="Filter your games"
                     />
                 </div>
-                <GameSorter />
+                <GameSorter
+                    sortDirection={this.state.sortDirection}
+                    sortType={this.state.sortType}
+                    onSortDirectionChange={this.onSortDirectionChange.bind(
+                        this,
+                    )}
+                    onSortTypeChange={this.onSortTypeChange.bind(this)}
+                />
                 <GameList
                     games={this.state.games}
                     onGameStart={this.onGameStart.bind(this)}

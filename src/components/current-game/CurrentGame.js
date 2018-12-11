@@ -82,10 +82,10 @@ class CurrentGame extends Component {
                                     Finish
                                 </button>
                                 <button
-                                    className="button pause"
+                                    className={`button ${this.state.isPaused ? 'paused' : 'resumed'}`}
                                     onClick={this.pauseTracking.bind(this)}
                                 >
-                                    Pause
+                                    {this.state.isPaused ? 'Resume' : 'Pause'}
                                 </button>
                                 <button
                                     className="button cancel"

@@ -9,7 +9,32 @@ class App extends Component {
         this.state = {
             addingGame: false,
             results: [],
-            games: JSON.parse(localStorage.getItem('games')) || [],
+            games: JSON.parse(localStorage.getItem('games')) || [
+                {
+                    id: '36936',
+                    name: 'Nioh',
+                    image:
+                        'https://howlongtobeat.com/gameimages/36936_Nioh.jpg',
+                    played: 0,
+                    lastPlayed: 0,
+                },
+                {
+                    id: '57351',
+                    name: 'FIFA 19',
+                    image:
+                        'https://howlongtobeat.com/gameimages/57351_Fifa_19.jpg',
+                    played: 0,
+                    lastPlayed: 0,
+                },
+                {
+                    id: '31388',
+                    name: 'Detroit: Become Human',
+                    image:
+                        'https://howlongtobeat.com/gameimages/Detroit_Become_Human.jpg',
+                    played: 0,
+                    lastPlayed: 0,
+                },
+            ],
             currentGame: [],
             sortType: localStorage.getItem('sortType') || 'recent',
             sortDirection: localStorage.getItem('sortDirection') || 'desc',

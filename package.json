@@ -2,6 +2,7 @@
   "name": "ps4-time-tracking",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://68.183.68.204/",
   "dependencies": {
     "concurrently": "^4.1.0",
     "hh-mm-ss": "^1.2.0",

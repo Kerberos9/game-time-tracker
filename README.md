@@ -12,6 +12,7 @@ Track your playtime in any game, any console. This was mostly made for PS4 since
 - Account system to sync times cross-browser.
 - Showing average times for Main Game and Completionist, both fetched from [HowLongToBeat](https://howlongtobeat.com).
 - Easily adding your time to [HowLongToBeat](https://howlongtobeat.com) lists.
+- Manually adding time, in case you forgot to start.
 
 
 ### Other

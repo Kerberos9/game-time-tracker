@@ -1,6 +1,11 @@
 # Game Time Tracker
 Track your playtime in any game, any console. This was mostly made for PS4 since there's no native way to do it, but it can work with any console, and with PC games that don't have supported time tracking (like pirated games).
 
+### How to use
+The GameTimeTracker is currently not online in any server, but you can run it locally!
+Just clone the repo and run `npm install && npm start` and everything should get started!
+It will eventually be live and you won't have to do this, but for now this is as good as it gets.
+
 ### FAQ
 - Data is saved in the browser's localStorage, which means it saves only in your current browser, and will be deleted if you delete localStorage (typically when using "Clear browsing data").
 - Game results (name, image, etc) when trying to add a game are fetched from [HowLongToBeat](https://howlongtobeat.com), which means no game should really be missing.

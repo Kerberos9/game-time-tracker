@@ -10,6 +10,7 @@ It will eventually be live and you won't have to do this, but for now this is as
 - Data is saved in the browser's localStorage, which means it saves only in your current browser, and will be deleted if you delete localStorage (typically when using "Clear browsing data").
 - Game results (name, image, etc) when trying to add a game are fetched from [HowLongToBeat](https://howlongtobeat.com), which means no game should really be missing.
 - Time is only saved when you press the 'Finish' button, this is made so you can discard recorded time (with the 'Cancel' button) if you went afk, or if you were only testing.
+- The app is currently designed for small sizes (mobile), and I'm currently working on the desktop version. That's why, on a big 1920x1080 desktop screen, it looks off, with big buttons and whatnot. [This is what the app looks like on mobile](https://i.imgur.com/5UrH0oC.png)
 
 ### Planned features
 - ~~Sort games in your list~~

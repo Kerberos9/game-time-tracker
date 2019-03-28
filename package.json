@@ -1,36 +1,42 @@
 {
-  "name": "ps4-time-tracking",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "http://68.183.68.204/",
-  "dependencies": {
-    "concurrently": "^4.1.0",
-    "hh-mm-ss": "^1.2.0",
-    "lodash": "^4.17.11",
-    "mprogress": "^0.1.1",
-    "normalize.css": "^8.0.1",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
-  },
-  "scripts": {
-    "start": "concurrently \"cd server && npm start\" \"react-scripts start\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "devDependencies": {
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-security": "^1.4.0"
-  }
+    "name": "ps4-time-tracking",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "http://68.183.68.204/",
+    "dependencies": {
+        "concurrently": "^4.1.0",
+        "hh-mm-ss": "^1.2.0",
+        "lodash": "^4.17.11",
+        "mprogress": "^0.1.1",
+        "normalize.css": "^8.0.1",
+        "react": "^16.6.3",
+        "react-dom": "^16.6.3",
+        "react-scripts": "2.1.1",
+        "serve": "^10.1.2"
+    },
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run publish\"",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "server": "cd server && npm start",
+        "publish": "serve -s build -l 3000",
+        "server-dev": "cd server && npm run start-dev",
+        "publish-dev": "react-scripts start",
+        "dev": "concurrently \"npm run server-dev\" \"npm run publish-dev\""
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": [
+        ">0.2%",
+        "not dead",
+        "not ie <= 11",
+        "not op_mini all"
+    ],
+    "devDependencies": {
+        "eslint-config-prettier": "^3.3.0",
+        "eslint-plugin-react": "^7.11.1",
+        "eslint-plugin-security": "^1.4.0"
+    }
 }

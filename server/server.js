@@ -1,4 +1,4 @@
-const { db, root, frontend_origin } = require('./config');
+const { frontend_origin } = require('./config');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();

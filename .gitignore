@@ -24,7 +24,4 @@ yarn-error.log*
 
 .idea/
 
-./config.js
-src/config.js
-server/config.js
 server/node_modules

@@ -1,3 +1,3 @@
 module.exports = {
-    frontend_origin: 'http://localhost:3000',
+    frontend_origin: 'http://game-time-tracker.herokuapp.com',
 };

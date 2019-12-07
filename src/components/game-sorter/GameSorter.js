@@ -27,6 +27,15 @@ class GameSorter extends Component {
                         Title
                     </button>{' '}
                     |{' '}
+                    <button
+                        className="text-button"
+                        onClick={() =>
+                            this.props.onSortTypeChange('completionist')
+                        }
+                    >
+                        Est. Time
+                    </button>{' '}
+                    |{' '}
                     {this.props.sortDirection === 'asc' ? (
                         <button
                             className="text-button direction-button-asc"

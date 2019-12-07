@@ -91,11 +91,16 @@ class App extends Component {
     }
     prepareGameList() {
         let games = this.state.games.sort(this.getSortingFunction());
+        console.log(games);
         this.setState({ games }, this.saveToStorage);
     }
 
     getSortingFunction() {
         switch (this.state.sortType) {
+            case 'completionist':
+                return this.state.sortDirection === 'asc'
+                    ? (a, b) => a.completionist - b.completionist
+                    : (a, b) => b.completionist - a.completionist;
             case 'time':
                 return this.state.sortDirection === 'asc'
                     ? (a, b) => a.played - b.played

@@ -17,9 +17,7 @@ class GameAdder extends Component {
     }
     fetchGames() {
         this.setState({ loading: true });
-        let url = `${backend_api}/getGamesResult?name=${
-            this.state.searchValue
-        }`;
+        let url = `${backend_api}/getGamesResult?name=${this.state.searchValue}`;
         fetch(url)
             .then(data => {
                 if (data.ok) {
@@ -29,6 +27,7 @@ class GameAdder extends Component {
                 }
             })
             .then(res => {
+                console.log('TCL: GameAdder -> res', res);
                 this.props.onGetResults(res);
                 this.setState({ loading: false });
             })

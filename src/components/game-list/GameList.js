@@ -13,6 +13,7 @@ class GameList extends Component {
                         title={game.name}
                         played={game.played}
                         image={game.image}
+                        completionist={game.completionist}
                         onGameStart={this.props.onGameStart}
                         onGameDelete={this.props.onGameDelete}
                     />

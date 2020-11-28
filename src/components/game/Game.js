@@ -40,7 +40,7 @@ class Game extends Component {
         </div>
         <div className='game-meta'>
           <h1 className='game-title'>
-            {this.props.title} - {this.props.completionist}
+            {this.props.title} - {this.props.completionist} hours to platinum.
           </h1>
           <div className='game-status'>
             <button

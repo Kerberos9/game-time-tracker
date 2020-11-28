@@ -8,8 +8,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 60%;
 }
 .current-game-block {
+  display: flex;
+  justify-content: center;
   min-width: 100%;
   position: fixed;
   top: 3rem;

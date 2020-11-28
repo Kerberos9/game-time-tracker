@@ -1,5 +1,7 @@
 .game-sorter {
-  margin: 0 2rem;
+  text-align: center;
+  width: 100%;
+  display: block;
 }
 .text-button {
   color: #3964a5;

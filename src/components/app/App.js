@@ -34,7 +34,8 @@ class App extends Component {
       ],
       currentGame: [],
       sortType: localStorage.getItem('sortType') || 'recent',
-      sortDirection: localStorage.getItem('sortDirection') || 'desc'
+      sortDirection: localStorage.getItem('sortDirection') || 'desc',
+      filter: ''
     };
   }
   onGameStart(game) {
@@ -122,7 +123,12 @@ class App extends Component {
           game={this.state.currentGame}
         />
         <div className='game-filter'>
-          <input type='text' className='game-filter-input' placeholder='Filter your games' />
+          <input
+            type='text'
+            onChange={e => this.setState({ filter: e.target.value })}
+            className='game-filter-input'
+            placeholder='Filter your games'
+          />
         </div>
         <GameSorter
           sortDirection={this.state.sortDirection}
@@ -134,6 +140,7 @@ class App extends Component {
           games={this.state.games}
           onGameStart={this.onGameStart.bind(this)}
           onGameDelete={this.onGameDelete.bind(this)}
+          filter={this.state.filter}
         />
         <GameAdder
           results={this.state.results}

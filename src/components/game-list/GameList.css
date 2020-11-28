@@ -1,6 +1,8 @@
 .game-list {
-  display: flex;
+  display: grid;
   justify-content: center;
-  flex-direction: column;
-  margin: 0 2rem;
+  z-index: -999;
+  position: absolute;
+  width: 100%;
+  height: 100px;
 }

@@ -5,9 +5,12 @@
     "homepage": "http://68.183.68.204/",
     "dependencies": {
         "concurrently": "^4.1.0",
+        "cors": "^2.8.5",
         "hh-mm-ss": "^1.2.0",
+        "howlongtobeat": "^1.2.1",
         "lodash": "^4.17.15",
         "mprogress": "^0.1.1",
+        "nodemon": "^2.0.6",
         "normalize.css": "^8.0.1",
         "react": "^16.6.3",
         "react-dom": "^16.6.3",
@@ -23,7 +26,9 @@
         "publish": "serve -s build -l 3000",
         "server-dev": "cd server && npm run start-dev",
         "publish-dev": "react-scripts start",
-        "dev": "concurrently \"npm run server-dev\" \"npm run publish-dev\""
+        "dev": "concurrently \"npm run server-dev\" \"npm run publish-dev\"",
+        "lint": "eslint \"src/**/*.js\"",
+        "lint:fix": "eslint --fix \"src/**/*.js\""
     },
     "eslintConfig": {
         "extends": "react-app"

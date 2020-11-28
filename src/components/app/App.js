@@ -64,6 +64,16 @@ class App extends Component {
     this.setState({ games, currentGame: [] }, this.prepareGameList);
   }
 
+  updatePlatHours(game) {
+    let otherGames = this.state.games.filter(g => g.id !== game.id);
+    let games = [...otherGames, game];
+    this.setState({ games, currentGame: [] }, this.prepareGameList);
+  }
+  onGuideEdit(game) {
+    let otherGames = this.state.games.filter(g => g.id !== game.id);
+    let games = [...otherGames, game];
+    this.setState({ games, currentGame: [] }, this.prepareGameList);
+  }
   saveToStorage() {
     localStorage.setItem('games', JSON.stringify(this.state.games));
     localStorage.setItem('sortDirection', this.state.sortDirection);
@@ -140,6 +150,8 @@ class App extends Component {
           games={this.state.games}
           onGameStart={this.onGameStart.bind(this)}
           onGameDelete={this.onGameDelete.bind(this)}
+          onPlatEdit={this.updatePlatHours.bind(this)}
+          onGuideEdit={this.onGuideEdit.bind(this)}
           filter={this.state.filter}
         />
         <GameAdder

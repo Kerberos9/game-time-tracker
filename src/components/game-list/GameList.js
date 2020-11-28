@@ -11,6 +11,7 @@ class GameList extends Component {
           .map(game => (
             <Game
               key={game.id}
+              game={game}
               id={game.id}
               title={game.name}
               played={game.played}
@@ -18,6 +19,8 @@ class GameList extends Component {
               completionist={game.completionist}
               onGameStart={this.props.onGameStart}
               onGameDelete={this.props.onGameDelete}
+              onPlatEdit={this.props.onPlatEdit}
+              onGuideEdit={this.props.onGuideEdit}
             />
           ))}
       </div>

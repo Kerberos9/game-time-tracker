@@ -62,7 +62,7 @@ class GameAdder extends Component {
               <>
                 <input
                   type='text'
-                  className='game-filter-input'
+                  className='game-filter-input-game-adder'
                   placeholder='Add a game'
                   onKeyUp={this.handleInputMethod.bind(this)}
                   ref={input => {

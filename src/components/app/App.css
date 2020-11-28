@@ -20,6 +20,12 @@ body {
   box-sizing: border-box;
 }
 
+.game-filter-input-game-adder {
+  min-width: 50%;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+}
+
 .add-game {
   border-radius: 50%;
   padding: 1rem;

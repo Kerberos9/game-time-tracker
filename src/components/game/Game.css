@@ -73,3 +73,18 @@
   padding: 0.3rem 0;
   opacity: 0.8;
 }
+
+.hours-input {
+  text-align: center;
+  width: 35px;
+}
+
+.guide-link-input {
+  width: 200px;
+  display: inline;
+  margin-left: 3px;
+}
+
+.guide-link {
+  margin-left: 3px;
+}

@@ -11,7 +11,7 @@ class GameResult extends Component {
               id: this.props.id,
               name: this.props.name,
               image: this.props.imageUrl,
-              completionist: this.props.completionist
+              completionist: 999
             })
           }
         >

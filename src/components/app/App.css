@@ -1,101 +1,101 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .app {
-    padding-top: 16rem;
+  padding-top: 16rem;
 }
 
 .game-filter {
-    margin: 0.5rem 2rem;
+  margin: 0.5rem 2rem;
 }
 
 .game-filter-input {
-    min-width: 100%;
-    padding: 0.5rem 1rem;
-    box-sizing: border-box;
+  min-width: 100%;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
 }
 
 .add-game {
-    border-radius: 50%;
-    padding: 1rem;
-    border: none;
-    width: 4rem;
-    height: 4rem;
-    background-color: #4a90e2;
-    font-size: 2rem;
-    line-height: 2rem;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
-    z-index: 3;
+  border-radius: 50%;
+  padding: 1rem;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  background-color: #4a90e2;
+  font-size: 2rem;
+  line-height: 2rem;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3);
+  z-index: 3;
 }
 
 .add-game:hover {
-    cursor: pointer;
-    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.3);
 }
 
 .add-game:active {
-    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.3);
 }
 
 .overlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    right: 0;
-    z-index: 2;
-    -webkit-animation: fadein 0.5s;
-    -moz-animation: fadein 0.5s;
-    -ms-animation: fadein 0.5s;
-    -o-animation: fadein 0.5s;
-    animation: fadein 0.5s;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  z-index: 2;
+  -webkit-animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s;
+  -ms-animation: fadein 0.5s;
+  -o-animation: fadein 0.5s;
+  animation: fadein 0.5s;
 }
 
 @keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-ms-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes fadein {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

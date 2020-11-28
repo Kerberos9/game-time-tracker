@@ -7,27 +7,27 @@ const hltb = require('./src/hltb/hltb');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: frontend_origin,
+  origin: frontend_origin
 };
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 
 router.get('/getUserProfile', (req, res) => {
-    return res.json({ success: true });
+  return res.json({ success: true });
 });
 
 router.get('/getGamesResult', async (req, res) => {
-    try {
-        if (!req.query.name) {
-            throw 'Empty name!';
-        }
-        let result = await hltb.getGame(req.query.name);
-        return res.json(result);
-    } catch (e) {
-        res.statusCode = 500;
-        return res.json({ success: false, error: e });
+  try {
+    if (!req.query.name) {
+      throw 'Empty name!';
     }
+    let result = await hltb.getGame(req.query.name);
+    return res.json(result);
+  } catch (e) {
+    res.statusCode = 500;
+    return res.json({ success: false, error: e });
+  }
 });
 
 app.use('/api', router);

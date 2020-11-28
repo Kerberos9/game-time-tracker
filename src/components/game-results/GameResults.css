@@ -1,10 +1,10 @@
-.game-results{
-    z-index: 3;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    bottom: 48px;
-    width: 100%;
-    left: 0;
+.game-results {
+  z-index: 3;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 48px;
+  width: 100%;
+  left: 0;
 }

@@ -19,8 +19,7 @@ class GameList extends Component {
               completionist={game.completionist}
               onGameStart={this.props.onGameStart}
               onGameDelete={this.props.onGameDelete}
-              onPlatEdit={this.props.onPlatEdit}
-              onGuideEdit={this.props.onGuideEdit}
+              onGameEdit={this.props.onGameEdit}
             />
           ))}
       </div>

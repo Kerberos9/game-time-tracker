@@ -64,16 +64,12 @@ class App extends Component {
     this.setState({ games, currentGame: [] }, this.prepareGameList);
   }
 
-  updatePlatHours(game) {
+  onGameEdit(game) {
     let otherGames = this.state.games.filter(g => g.id !== game.id);
     let games = [...otherGames, game];
     this.setState({ games, currentGame: [] }, this.prepareGameList);
   }
-  onGuideEdit(game) {
-    let otherGames = this.state.games.filter(g => g.id !== game.id);
-    let games = [...otherGames, game];
-    this.setState({ games, currentGame: [] }, this.prepareGameList);
-  }
+
   saveToStorage() {
     localStorage.setItem('games', JSON.stringify(this.state.games));
     localStorage.setItem('sortDirection', this.state.sortDirection);
@@ -128,9 +124,10 @@ class App extends Component {
       <div className='app'>
         <Header />
         <CurrentGame
-          updatePlayedGame={this.updatePlayedGame.bind(this)}
+          updatePlayedGame={this.onGameEdit.bind(this)}
           onCancelTracking={this.onCancelTracking.bind(this)}
           game={this.state.currentGame}
+          onGameEdit={this.onGameEdit.bind(this)}
         />
         <div className='game-filter'>
           <input
@@ -150,8 +147,7 @@ class App extends Component {
           games={this.state.games}
           onGameStart={this.onGameStart.bind(this)}
           onGameDelete={this.onGameDelete.bind(this)}
-          onPlatEdit={this.updatePlatHours.bind(this)}
-          onGuideEdit={this.onGuideEdit.bind(this)}
+          onGameEdit={this.onGameEdit.bind(this)}
           filter={this.state.filter}
         />
         <GameAdder

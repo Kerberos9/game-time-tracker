@@ -36,10 +36,10 @@ class CurrentGame extends Component {
 
   finishTracking() {
     clearInterval(this.state.intervalID);
-    this.props.updatePlayedGame({
-      game: this.props.game,
-      played: this.state.played
-    });
+    let game = this.props.game;
+    game.played = this.state.played;
+    game.lastPlayed = Date.now();
+    this.props.onGameEdit(game);
   }
 
   pauseTracking() {

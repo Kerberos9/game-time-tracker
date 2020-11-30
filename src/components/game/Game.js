@@ -9,16 +9,16 @@ class Game extends Component {
     };
   }
 
-  onPlatEdit(hours) {
+  updatePlatTime(hours) {
     let game = this.props.game;
     game.completionist = hours;
-    this.props.onPlatEdit(game);
+    this.props.onGameEdit(game);
   }
 
   updateGuideLink(link) {
     let game = this.props.game;
     game.guide = link;
-    this.props.onGuideEdit(game);
+    this.props.onGameEdit(game);
   }
   render() {
     return (
@@ -55,7 +55,7 @@ class Game extends Component {
             <input
               type='text'
               className='hours-input'
-              onChange={e => this.onPlatEdit(e.target.value)}
+              onChange={e => this.updatePlatTime(e.target.value)}
               value={this.props.completionist}
             ></input>{' '}
             hours.
@@ -81,14 +81,7 @@ class Game extends Component {
           <div className='game-status'>
             <button
               className='button-start button'
-              onClick={() =>
-                this.props.onGameStart({
-                  id: this.props.id,
-                  name: this.props.title,
-                  image: this.props.image,
-                  played: this.props.played
-                })
-              }
+              onClick={() => this.props.onGameStart(this.props.game)}
             >
               Start
             </button>

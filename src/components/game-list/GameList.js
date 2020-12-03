@@ -7,7 +7,7 @@ class GameList extends Component {
     return (
       <div className='game-list'>
         {this.props.games
-          .filter(g => g.name.includes(this.props.filter))
+          .filter(g => g.name.toLowerCase().includes(this.props.filter.toLowerCase()))
           .map(game => (
             <Game
               key={game.id}
